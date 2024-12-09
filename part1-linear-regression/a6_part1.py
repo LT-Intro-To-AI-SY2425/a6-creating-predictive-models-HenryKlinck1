@@ -21,7 +21,7 @@ r_squared = model.score(x, y)
 print(f"Model's Linear Equation: y = {coef}x + {intercept}")
 print(f"R Squared value: {r_squared}")
 
-x_predict = 43
+x_predict = 42
 
 # Predict the blood pressure
 prediction = model.predict([[x_predict]])
