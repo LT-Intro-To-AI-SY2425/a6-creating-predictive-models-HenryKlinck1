@@ -11,3 +11,4 @@ It shows the testing data on the model
 shows how well the line of best fit fits the data
 
 3. Would you say that your model is accurate? What evidence supports your conclusion? Consider the meaning of the predicted and actual values in the context of the chart below from the American Heart Association’s website on understanding blood pressure.
+As of right now, no i dont think my model is accurate because my r^2 value is .63 which generally anything under .80 isnt very reliable. The predicted values are predictions of a persons blood pressure at a certin age. but the predicitons and acctual values are off by like 4 points which isnt great.
