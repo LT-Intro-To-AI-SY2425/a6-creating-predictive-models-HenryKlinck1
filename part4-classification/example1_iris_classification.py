@@ -19,12 +19,13 @@ y = data["Species"].values
 #Standardizes the x values
 scaler = StandardScaler().fit(x)
 x = scaler.transform(x)
-
+print(x)
 #Splits the data into a training and testing set
 x_train, x_test, y_train, y_test = train_test_split(x, y)
 
 #Creates the logisitic regression model
 model = linear_model.LogisticRegression().fit(x_train, y_train)
+
 
 #Prints the accuracy and predictions of the model
 print("Accuracy:", model.score(x_test, y_test))
