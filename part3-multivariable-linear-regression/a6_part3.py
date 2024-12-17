@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
 
 #imports and formats the data
 data = pd.read_csv("part3-multivariable-linear-regression/car_data.csv")
@@ -17,6 +18,7 @@ model.fit(x_train, y_train)
 #Each should be rounded to two decimal places. 
 print("***************")
 print("Model Summary:")
+predicted_prices = model.predict(x_test)
 print(f"Coefficients: {np.round(model.coef_, 2)}")
 print(f"Intercept: {np.round(model.intercept_, 2)}")
 print(f"R-squared: {np.round(model.score(x_test, y_test), 2)}")
@@ -27,3 +29,17 @@ print("***************")
 print("Testing Results")
 for actual, predicted in zip(y_test, model.predict(x_test)):
     print(f"Actual Price: {round(actual, 2)}, Predicted Price: {round(predicted, 2)}")
+
+# Plotting the predicted vs actual prices
+plt.scatter(y_test, predicted_prices)
+plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red')  # Perfect fit line
+plt.xlabel('Actual Prices')
+plt.ylabel('Predicted Prices')
+plt.title('Actual vs Predicted Prices')
+plt.show()
+
+# Predicting prices
+new_data = np.array([[89000, 10], [150000, 20]])
+predictions = model.predict(new_data)
+print(f"Predicted price for a 10-year-old car with 89000 miles: {predictions[0]}")
+print(f"Predicted price for a 20-year-old car with 150000 miles: {predictions[1]}")
