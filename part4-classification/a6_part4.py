@@ -50,3 +50,4 @@ for index in range(len(x_test)):
 
     print(f"Prediction: {predicted_label}, Actual: {actual_label}")
     print("")
+
